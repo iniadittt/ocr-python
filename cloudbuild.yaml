@@ -16,7 +16,7 @@ steps:
       - 'ocr-python'
       - '--image=asia-southeast2-docker.pkg.dev/$PROJECT_ID/artifact/ocr:$COMMIT_SHA'
       - '--region=us-central1'
-      - '--cpu=2048Mi'
+      - '--cpu=2'
       - '--memory=2048Mi'
       - '--min-instances=0'
       - '--max-instances=2'
