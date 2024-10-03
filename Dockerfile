@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+# Use Debian as the base image
+FROM debian:latest
 
 # Environment variables
 ENV PYTHONBUFFERED=1
@@ -12,11 +13,11 @@ WORKDIR $APP_HOME
 # Install system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    poppler-utils \
-    tesseract-ocr \
     python3 \
     python3-pip \
     python3-venv \
+    poppler-utils \
+    tesseract-ocr \
     && ln -s /usr/bin/python3 /usr/bin/python && \
     rm -rf /var/lib/apt/lists/*
 
@@ -28,8 +29,8 @@ COPY . .
 
 # Install Python dependencies in the virtual environment
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir pdf2image pytesseract
+    pip install --no-cache-dir pdf2image pytesseract \
+    pip install --no-cache-dir -r requirements.txt &&
 
 # Expose application port
 EXPOSE 8080
