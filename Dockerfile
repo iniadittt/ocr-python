@@ -29,8 +29,8 @@ COPY . .
 
 # Install Python dependencies in the virtual environment
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir pdf2image pytesseract \
-    pip install --no-cache-dir -r requirements.txt &&
+    pip install --no-cache-dir pdf2image pytesseract && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Expose application port
 EXPOSE 8080
