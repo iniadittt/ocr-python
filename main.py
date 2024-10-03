@@ -22,6 +22,7 @@ def ocr():
         results = []
         for filename in os.listdir(pdf_folder):
             if filename.endswith('.pdf'):
+                print(filename)
                 pdf_path = os.path.join(pdf_folder, filename)
                 text = Extrac.extract_text_from_pdf(pdf_path)
                 emails, phones = Extrac.extract_email_and_phone(text)

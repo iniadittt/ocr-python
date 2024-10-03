@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 ENV PYTHONBUFFERED=1
 ENV APP_HOME=/app
+ENV PATH="/usr/lib/poppler:/usr/bin:${PATH}"
 WORKDIR $APP_HOME
 RUN apt-get update && \
     apt-get install -y --no-install-recommends poppler-utils tesseract-ocr && \
