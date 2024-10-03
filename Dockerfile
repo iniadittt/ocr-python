@@ -1,4 +1,3 @@
-# Use the latest Ubuntu base image
 FROM ubuntu:latest
 ENV PYTHONBUFFERED True
 ENV APP_HOME /app
@@ -11,6 +10,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install pdf2image pytesseract
 EXPOSE 8080
-
-# Command to run the application
 CMD ["python", "main.py"]
